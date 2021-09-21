@@ -10,10 +10,10 @@ namespace passwordGenerator
     {
         public static int PositiveNotNullNumber(string question)
         {
-            return ValidNumber(question, 1, int.MaxValue);
+            return ValidNumber(question, 1, int.MaxValue, "Error: Please, enter a positive & not null number");
         }
 
-        public static int ValidNumber(string question, int min, int max)
+        public static int ValidNumber(string question, int min, int max, string ownErrorMessage = null)
         {
 
             int number = AskForNumber(question);
@@ -21,7 +21,16 @@ namespace passwordGenerator
             {
                 return number;
             }
-            Console.WriteLine($"The number should be between {min} and {max}");
+            if (ownErrorMessage == null)
+            {
+                Console.WriteLine($"The number should be between {min} and {max}");
+            }
+            else
+            {
+                Console.WriteLine(ownErrorMessage);
+            }
+            
+            Console.WriteLine();
 
             return ValidNumber(question, min, max);
         }
@@ -43,6 +52,7 @@ namespace passwordGenerator
                 catch (Exception)
                 {
                     Console.WriteLine("Please, enter a number.");
+                    Console.WriteLine();
                 }
             }
         }

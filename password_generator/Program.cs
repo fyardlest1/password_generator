@@ -20,6 +20,7 @@ namespace password_generator
                 " 3- Lower Characters + Upper Characters + Numbers?\n" +
                 " 4- Lower Characters + Upper Characters + Numbers + Special Characters?\n" +
                 "Your choice: ", 1, 4);
+            Console.WriteLine();
 
             string lowerAlphabet = "abcdefghijklmnopqrstuvwxyz";
             string upperAlphabet = lowerAlphabet.ToUpper();
