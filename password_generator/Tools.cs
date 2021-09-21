@@ -13,7 +13,7 @@ namespace passwordGenerator
             return ValidNumber(question, 1, int.MaxValue);
         }
 
-        static int ValidNumber(string question, int min, int max)
+        public static int ValidNumber(string question, int min, int max)
         {
 
             int number = AskForNumber(question);
